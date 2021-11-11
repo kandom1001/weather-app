@@ -1,0 +1,48 @@
+.add-location-container {
+  width: 270px;
+  height: 135px;
+  background-color: white;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../images/locationBackground.gif");
+  background-size: cover;
+  border-radius: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-location-container {
+    margin-left: 0;
+  }
+}
+
+.add-location-button {
+  width: 100px;
+  height: 25px;
+  border-radius: 12.5px;
+  background-color: #eeedfc;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.add-location-input {
+  width: 150px;
+  height: 25px;
+  color: #7d6fe6;
+  background-color: #eeedfc;
+  text-align: center;
+  border-radius: 25px;
+  border-color: transparent;
+}
+
+.add-location-confirm {
+  width: 50px;
+  height: 25px;
+  color: #7d6fe6;
+  background-color: #eeedfc;
+  text-align: center;
+  border-radius: 25px;
+  border-color: transparent;
+}

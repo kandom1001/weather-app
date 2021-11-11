@@ -1,38 +1,33 @@
-.weatherTab-weatherTab {
+.weather-tab {
   position: absolute;
-  top: 200px;
+  top: 150px;
   height: 100px;
   width: 100px;
   background-color: #353688;
   border-radius: 0 25px 25px 25px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
-.weatherTab-weatherIcon {
-  margin-top: 10px;
-  margin-left: 20px;
+.weather-icon {
   height: 64px;
   width: 64px;
   background-color: transparent;
 }
 
-.weatherTab-condition {
-  margin-left: 20px;
-  margin-top: -10px;
+.weather-condition {
   width: 64px;
   font-size: 0.8rem;
   background-color: transparent;
   color: white;
 }
 
-.weatherTab-weatherTab::before {
+.weather-tab::before {
   content: "";
   position: absolute;
-
   background-color: transparent;
   bottom: 100px;
   left: 0;
@@ -42,9 +37,9 @@
   box-shadow: 0 25px 0 0 #353688;
 }
 
-.weatherTab-temperatureTab {
+.temperature-tab {
   position: absolute;
-  top: 300px;
+  top: 250px;
   height: 100px;
   width: 100px;
   background-color: #7768e5;
@@ -54,17 +49,21 @@
   padding-top: 20px;
   font-size: 2.5rem;
   display: flex;
-  align-items: flex-start;
 }
 
-.weatherTab-temperatureTab > div {
+.temperature-tab > div {
   background-color: transparent;
+  font-size: 3rem;
+  margin-left: 20px;
 }
 
-.weatherTab-temperatureTab::before {
+.temperature-tab > div > sup {
+  font-size: 1.5rem;
+}
+
+.temperature-tab::before {
   content: "";
   position: absolute;
-
   background-color: transparent;
   bottom: 100px;
   left: 0;
@@ -75,10 +74,9 @@
   box-shadow: 0 25px 0 0 #7768e5;
 }
 
-.weatherTab-temperatureTab::after {
+.temperature-tab::after {
   content: "";
   position: absolute;
-
   background-color: transparent;
   bottom: -50px;
   left: -0px;
@@ -86,14 +84,4 @@
   width: 25px;
   border-top-left-radius: 25px;
   box-shadow: 0 -25px 0 0 #7768e5;
-}
-
-.weatherTab-temperatureData {
-  font-size: 3rem;
-  margin-left: 20px;
-}
-
-.weatherTab-temperatureSymbol {
-  font-size: 1rem;
-  margin-top: 5px;
 }

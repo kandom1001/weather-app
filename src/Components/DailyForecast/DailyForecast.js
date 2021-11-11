@@ -12,23 +12,22 @@ const DailyForecast = ({ forecastWeather }) => {
   ];
 
   return (
-    <div className="dailyForecast-container">
+    <div className="daily-forecast-container">
       <img
-        src={`https:${forecastWeather?.day.condition.icon}`}
-        className="dailyForecast-weatherIcon"
+        src={`https:${forecastWeather?.day?.condition?.icon}`}
+        className="weather-icon"
         alt="weatherIcon"
       />
-      <div className="dailyForecast-textContainer">
-        <div className="dailyForecast-dayOfWeek">
+      <div className="daily-forecast-text-container">
+        <strong>
           {days[new Date(forecastWeather?.date_epoch * 1000).getDay()]}
-        </div>
-        <div className="dailyForecast-condition">
-          {forecastWeather?.day.condition.text}
-        </div>
+        </strong>
+        <br />
+        {forecastWeather?.day?.condition?.text}
       </div>
-      <div className="dailyForecast-temperature">
-        {Math.floor(forecastWeather?.day.maxtemp_c)}° /&nbsp;
-        {Math.floor(forecastWeather?.day.mintemp_c)}°
+      <div className="daily-forecast-temperature-container">
+        {Math.floor(forecastWeather?.day?.maxtemp_c)}° /&nbsp;
+        {Math.floor(forecastWeather?.day?.mintemp_c)}°
       </div>
     </div>
   );

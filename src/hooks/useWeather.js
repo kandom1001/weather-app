@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
 
-export const useWeather = (location) => {
-  const [currentWeather, setCurrentWeather] = useState("");
-  const [forecastWeather, setForecastWeather] = useState("");
-  const [localCity, setLocalCity] = useState("");
+export const useWeather = ({ city, location }) => {
+  const [data, setData] = useState("");
+
   useEffect(() => {
-    if (location) {
+    if (city || location) {
+      const query = city
+        ? city
+        : `${location.coords.latitude},${location.coords.longitude}`;
       fetch(
-        `http://api.weatherapi.com/v1/forecast.json?Key=95d9017a2fb146f393142849210311&q=${location.coords.latitude},${location.coords.longitude}&days=5`
+        `http://api.weatherapi.com/v1/forecast.json?Key=95d9017a2fb146f393142849210311&q=${query}&days=5`
       )
         .then((response) => response.json())
         .then((data) => {
-          setCurrentWeather(data?.current);
-          setForecastWeather(data?.forecast?.forecastday);
-          setLocalCity(data?.location?.name);
+          setData(data);
         });
     }
-  }, [setCurrentWeather, setForecastWeather, location]);
-  return { currentWeather, forecastWeather, localCity };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setData, location, city]);
+
+  return { data };
 };

@@ -1,5 +1,5 @@
-.dailyForecast-container {
-  width: 225px;
+.daily-forecast-container {
+  width: 270px;
   height: 75px;
   background-color: transparent;
   font-weight: 100;
@@ -8,38 +8,24 @@
   border-width: 1px;
   border-color: #bcbcce;
   display: flex;
-  margin-bottom: 10px;
   justify-content: space-between;
   align-items: center;
 }
 
-.dailyForecast-weatherIcon {
+.weather-icon {
   width: 64px;
   height: 64px;
   background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.dailyForecast-textContainer {
+.daily-forecast-text-container {
   font-size: 0.8rem;
   width: 100px;
   background-color: transparent;
   justify-content: flex-start;
 }
 
-.dailyForecast-dayOfWeek {
-  background-color: transparent;
-  font-weight: bold;
-}
-.dailyForecast-condition {
-  background-color: transparent;
-  font-weight: 100;
-  color: #d9d9dd;
-}
-
-.dailyForecast-temperature {
+.daily-forecast-temperature-container {
   font-size: 1.2rem;
   width: 90px;
   height: 100%;

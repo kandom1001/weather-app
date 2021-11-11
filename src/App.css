@@ -1,5 +1,8 @@
 * {
   box-sizing: border-box;
+}
+
+html {
   background-color: #e3e8ed;
 }
 
@@ -7,32 +10,28 @@
   background-color: white;
   min-width: 250px;
   max-width: 1000px;
-  height: 750px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
 }
 
-.App-mainLocationContainer {
+.feature-container {
   width: 90%;
-  height: 300px;
-  background-image: url("./Images/mainBackground.jpeg");
-  background-size: cover;
-  border-radius: 25px;
-  align-self: center;
-  margin-top: 50px;
-}
-
-.App-featureContainer {
-  width: 90%;
-
-  height: 300px;
+  height: 100%;
   margin-top: 25px;
   background-color: white;
   border-radius: 25px;
   align-self: center;
   display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+  .feature-container {
+    justify-content: center;
+  }
 }

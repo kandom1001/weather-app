@@ -1,18 +1,9 @@
-.threeDaysForecast-container {
+.three-days-forecast-container {
+  height: 300px;
   font-size: 1.5rem;
   background-color: white;
   display: flex;
   flex-direction: column;
-}
-
-.threeDaysForecast-title {
-  margin-bottom: 50px;
-  background-color: white;
-  font-weight: 100;
-}
-
-.threeDaysForecast-title > span {
-  font-weight: bold;
-  display: inline;
-  background-color: white;
+  margin-bottom: 25px;
+  justify-content: space-between;
 }

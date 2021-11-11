@@ -3,22 +3,21 @@ import "./WeatherTab.css";
 const WeatherTab = ({ currentWeather }) => {
   return (
     <>
-      <div className="weatherTab-weatherTab">
-        <div
-          className="weatherTab-weatherIcon"
-          style={{
-            backgroundImage: `url(https:${currentWeather?.condition?.icon})`,
-          }}
+      <div className="weather-tab">
+        <img
+          src={`https:${currentWeather?.condition?.icon}`}
+          className="weather-icon"
+          alt="weatherIcon"
         />
-        <span className="weatherTab-condition">
+        <span className="weather-condition">
           {currentWeather?.condition?.text}
         </span>
       </div>
-      <div className="weatherTab-temperatureTab">
-        <div className="weatherTab-temperatureData">
-          {currentWeather?.temp_c}
+      <div className="temperature-tab">
+        <div>
+          {Math.floor(currentWeather?.temp_c)}
+          <sup>°C</sup>
         </div>
-        <div className="weatherTab-temperatureSymbol">℃</div>
       </div>
     </>
   );

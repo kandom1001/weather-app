@@ -1,24 +1,28 @@
 import "./App.css";
-import WeatherTab from "./Components/WeatherTab/WeatherTab";
-import ThreeDaysForecast from "./Components/ThreeDaysForecast/ThreeDaysForecast";
+import WeatherTab from "./components/weatherTab/WeatherTab";
+import ThreeDaysForecast from "./components/threeDaysForecast/ThreeDaysForecast";
 import { useWeather } from "./hooks/useWeather";
-import { useLocation } from "./hooks/useLocation";
+import { useCurrentLocation } from "./hooks/useCurrentLocation";
+import AdditionalLocations from "./components/additionalLocations/AdditionalLocations";
+import Banner from "./components/banner/Banner";
 
 function App() {
-  const { location } = useLocation();
-  console.log("here");
-  const { currentWeather, forecastWeather, localCity } = useWeather(location);
-  if (!currentWeather || !forecastWeather) {
+  const { location } = useCurrentLocation();
+  const param = {
+    location,
+  };
+  const { data } = useWeather(param);
+  if (!data) {
     return <div>loading</div>;
   }
-  console.log(currentWeather);
   return (
     <div className="main">
-      <WeatherTab currentWeather={currentWeather} />
-      <div className="App-mainLocationContainer">{localCity}</div>
-      <div className="App-featureContainer">
-        <ThreeDaysForecast forecastWeather={forecastWeather} />
+      <Banner city={data?.location?.name} country={data?.location?.country} />
+      <div className="feature-container">
+        <ThreeDaysForecast forecastWeather={data?.forecast.forecastday} />
+        <AdditionalLocations />
       </div>
+      <WeatherTab currentWeather={data?.current} />
     </div>
   );
 }
