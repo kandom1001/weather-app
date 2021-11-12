@@ -2,7 +2,7 @@ import "./CityWeather.css";
 import { useWeather } from "../../hooks/useWeather";
 
 const CityWeather = ({ city, removeCity }) => {
-  const { data } = useWeather({ city: city });
+  const { data } = useWeather({ city });
   return (
     !data?.error && (
       <div className="city-weather-container">

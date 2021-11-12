@@ -10,23 +10,19 @@ const AdditionalLocations = () => {
     setCityList(cityList.filter((e) => e !== city));
   };
 
+  const addCity = (city) => {
+    setCityList([...cityList, city]);
+  };
+
   console.log(cityList);
 
   return (
     <div className="additional-locations-container">
       {cityList &&
         cityList.map((city) => {
-          return (
-            <CityWeather
-              city={city}
-              cityList={cityList}
-              removeCity={removeCity}
-            />
-          );
+          return <CityWeather city={city} removeCity={removeCity} />;
         })}
-      {cityList.length < 4 && (
-        <AddLocation setCityList={setCityList} cityList={cityList} />
-      )}
+      {cityList.length < 4 && <AddLocation addCity={addCity} />}
     </div>
   );
 };

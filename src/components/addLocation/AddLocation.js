@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./AddLocation.css";
 
-const AddLocation = ({ setCityList, cityList }) => {
+const AddLocation = ({ addCity }) => {
   const [showAddLocationInput, setShowAddLocationInput] = useState(false);
   const [input, setInput] = useState("");
   return (
@@ -19,7 +19,7 @@ const AddLocation = ({ setCityList, cityList }) => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            setCityList([...cityList, input]);
+            addCity(input);
             setInput("");
             setShowAddLocationInput(false);
           }}
