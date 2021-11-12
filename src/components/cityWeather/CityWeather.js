@@ -3,6 +3,7 @@ import { useWeather } from "../../hooks/useWeather";
 
 const CityWeather = ({ city, removeCity }) => {
   const { data } = useWeather({ city });
+  data?.error && removeCity(city);
   return (
     !data?.error && (
       <div className="city-weather-container">

@@ -14,8 +14,6 @@ const AdditionalLocations = () => {
     setCityList([...cityList, city]);
   };
 
-  console.log(cityList);
-
   return (
     <div className="additional-locations-container">
       {cityList &&
