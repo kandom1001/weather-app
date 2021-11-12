@@ -8,10 +8,7 @@ import Banner from "./components/banner/Banner";
 
 function App() {
   const { location } = useCurrentLocation();
-  const param = {
-    location,
-  };
-  const { data } = useWeather(param);
+  const { data } = useWeather({ location });
   if (!data) {
     return <div>loading</div>;
   }
