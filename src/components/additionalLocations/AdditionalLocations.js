@@ -6,7 +6,7 @@ import AddLocation from "../addLocation/AddLocation";
 const AdditionalLocations = () => {
   const [cityList, setCityList] = useState([]);
 
-  const removeCity = (city, cityList) => {
+  const removeCity = (city) => {
     setCityList(cityList.filter((e) => e !== city));
   };
 

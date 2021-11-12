@@ -1,7 +1,7 @@
 import "./CityWeather.css";
 import { useWeather } from "../../hooks/useWeather";
 
-const CityWeather = ({ city, cityList, removeCity }) => {
+const CityWeather = ({ city, removeCity }) => {
   const { data } = useWeather({ city: city });
   return (
     !data?.error && (
@@ -31,7 +31,7 @@ const CityWeather = ({ city, cityList, removeCity }) => {
         </div>
         <button
           className="city-weather-remove-button hide"
-          onClick={() => removeCity(city, cityList)}
+          onClick={() => removeCity(city)}
         >
           X
         </button>
