@@ -7,10 +7,10 @@ const AdditionalLocations = () => {
   const [cityList, setCityList] = useState([]);
 
   const removeCity = (city, cityList) => {
-    const index = cityList.findIndex((e) => e === city);
-    cityList.splice(index, 1);
-    setCityList([...cityList]);
+    setCityList(cityList.filter((e) => e !== city));
   };
+
+  console.log(cityList);
 
   return (
     <div className="additional-locations-container">
