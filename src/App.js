@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import WeatherTab from "./components/weatherTab/WeatherTab";
 import ThreeDaysForecast from "./components/threeDaysForecast/ThreeDaysForecast";
 import { useWeather } from "./hooks/useWeather";
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="main">
       <Banner city={data?.location?.name} country={data?.location?.country} />
-      <div className="feature-container">
+      <div className="feature__container">
         <ThreeDaysForecast forecastWeather={data?.forecast.forecastday} />
         <AdditionalLocations />
       </div>

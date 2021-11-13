@@ -1,4 +1,4 @@
-import "./CityWeather.css";
+import "./CityWeather.scss";
 import { useWeather } from "../../hooks/useWeather";
 
 const CityWeather = ({ city, removeCity }) => {
@@ -6,34 +6,31 @@ const CityWeather = ({ city, removeCity }) => {
   data?.error && removeCity(city);
   return (
     !data?.error && (
-      <div className="city-weather-container">
-        <div className="cityWeather-top-line-container">
+      <div className="cityWeather__container">
+        <div className="cityWeather__topLineContainer">
           <img
             src={`https:${data?.current?.condition?.icon}`}
-            className="weather-icon"
-            alt="weatherIcon"
+            className="weatherIcon"
+            alt="weather icon"
           />
 
-          <div className="city-weather-temperature-container">
+          <div>
             <b>{data?.current?.temp_c}</b>
             <sup>°C</sup>
           </div>
-          <div className="city-weather-city-description-container">
+          <div>
             <b>{data?.location?.name}</b>
 
             <br />
             {data?.location?.country}
           </div>
         </div>
-        <div className="city-weather-bottom-line-container">
+        <div className="cityWeather_bottomLineContainer">
           <div>Humidity {data?.current?.humidity}%</div>
           <div>{data?.current?.wind_dir}</div>
           <div>{data?.current?.wind_kph} km/h</div>
         </div>
-        <button
-          className="city-weather-remove-button hide"
-          onClick={() => removeCity(city)}
-        >
+        <button className="hide" onClick={() => removeCity(city)}>
           X
         </button>
       </div>

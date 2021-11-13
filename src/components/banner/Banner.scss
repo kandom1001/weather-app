@@ -1,4 +1,4 @@
-.banner-container {
+.banner__container {
   width: 90%;
   height: 300px;
   margin-top: 50px;
@@ -6,11 +6,11 @@
   background-size: cover;
   border-radius: 25px;
   align-self: center;
-}
 
-.banner-container > span {
-  font-size: 2rem;
-  position: relative;
-  left: 200px;
-  top: 100px;
+  span {
+    font-size: 2rem;
+    position: relative;
+    left: 200px;
+    top: 100px;
+  }
 }

@@ -1,14 +1,14 @@
 import { useState } from "react";
-import "./AddLocation.css";
+import "./AddLocation.scss";
 
 const AddLocation = ({ addCity }) => {
   const [showAddLocationInput, setShowAddLocationInput] = useState(false);
   const [input, setInput] = useState("");
   return (
-    <div className="add-location-container">
+    <div className="addLocation__container">
       {!showAddLocationInput && (
         <button
-          className="add-location-button"
+          className="addLocation__button"
           onClick={() => setShowAddLocationInput(true)}
         >
           Add Location
@@ -25,7 +25,6 @@ const AddLocation = ({ addCity }) => {
           }}
         >
           <input
-            className="add-location-input"
             type="text"
             value={input}
             placeholder="Add Locations"
@@ -33,7 +32,7 @@ const AddLocation = ({ addCity }) => {
               setInput(e.target.value);
             }}
           />
-          <button type="submit" className="add-location-confirm">
+          <button type="submit" className="addLocation__confirm">
             Add
           </button>
         </form>

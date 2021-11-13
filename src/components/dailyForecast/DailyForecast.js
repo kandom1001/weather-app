@@ -1,4 +1,4 @@
-import "./DailyForecast.css";
+import "./DailyForecast.scss";
 
 const DailyForecast = ({ forecastWeather }) => {
   const days = [
@@ -12,20 +12,20 @@ const DailyForecast = ({ forecastWeather }) => {
   ];
 
   return (
-    <div className="daily-forecast-container">
+    <div className="dailyForecast__container">
       <img
         src={`https:${forecastWeather?.day?.condition?.icon}`}
-        className="weather-icon"
-        alt="weatherIcon"
+        className="weatherIcon"
+        alt="weather icon"
       />
-      <div className="daily-forecast-text-container">
+      <div>
         <strong>
           {days[new Date(forecastWeather?.date_epoch * 1000).getDay()]}
         </strong>
         <br />
         {forecastWeather?.day?.condition?.text}
       </div>
-      <div className="daily-forecast-temperature-container">
+      <div>
         {Math.floor(forecastWeather?.day?.maxtemp_c)}° /&nbsp;
         {Math.floor(forecastWeather?.day?.mintemp_c)}°
       </div>

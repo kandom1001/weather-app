@@ -19,7 +19,7 @@ html {
   flex-direction: column;
 }
 
-.feature-container {
+.feature__container {
   width: 90%;
   height: 100%;
   margin-top: 25px;
@@ -28,10 +28,8 @@ html {
   align-self: center;
   display: flex;
   flex-wrap: wrap;
-}
 
-@media only screen and (max-width: 768px) {
-  .feature-container {
+  @media screen and (max-width: 768px) {
     justify-content: center;
   }
 }

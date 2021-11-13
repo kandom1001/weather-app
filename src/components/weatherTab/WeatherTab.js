@@ -1,19 +1,17 @@
-import "./WeatherTab.css";
+import "./WeatherTab.scss";
 
 const WeatherTab = ({ currentWeather }) => {
   return (
     <>
-      <div className="weather-tab">
+      <div className="weatherTab">
         <img
           src={`https:${currentWeather?.condition?.icon}`}
-          className="weather-icon"
-          alt="weatherIcon"
+          className="weatherIcon"
+          alt="weather icon"
         />
-        <span className="weather-condition">
-          {currentWeather?.condition?.text}
-        </span>
+        <span>{currentWeather?.condition?.text}</span>
       </div>
-      <div className="temperature-tab">
+      <div className="temperatureTab">
         <div>
           {Math.floor(currentWeather?.temp_c)}
           <sup>°C</sup>

@@ -1,8 +1,8 @@
-import "./Banner.css";
+import "./Banner.scss";
 
 const Banner = ({ city, country }) => {
   return (
-    <div className="banner-container">
+    <div className="banner__container">
       <span>
         <b>{city}</b>
         <br />

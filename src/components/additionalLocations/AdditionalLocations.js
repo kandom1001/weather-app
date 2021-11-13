@@ -1,4 +1,4 @@
-import "./AdditionalLocations.css";
+import "./AdditionalLocations.scss";
 import { useState } from "react";
 import CityWeather from "../cityWeather/CityWeather";
 import AddLocation from "../addLocation/AddLocation";
@@ -15,7 +15,7 @@ const AdditionalLocations = () => {
   };
 
   return (
-    <div className="additional-locations-container">
+    <div className="additionalLocations__container">
       {cityList &&
         cityList.map((city) => {
           return <CityWeather city={city} removeCity={removeCity} />;

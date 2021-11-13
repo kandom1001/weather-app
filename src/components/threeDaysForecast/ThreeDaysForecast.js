@@ -1,9 +1,9 @@
 import DailyForecast from "../dailyForecast/DailyForecast";
-import "./ThreeDaysForecast.css";
+import "./ThreeDaysForecast.scss";
 
 const ThreeDaysForecast = ({ forecastWeather }) => {
   return (
-    <div className="three-days-forecast-container">
+    <div className="threeDaysForecast__container">
       <div>
         <strong>3 Days </strong>Forecast
       </div>
