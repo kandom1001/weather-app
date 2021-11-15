@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 export const useWeather = ({ city, location }) => {
   const [data, setData] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (city || location) {
@@ -13,11 +15,12 @@ export const useWeather = ({ city, location }) => {
       )
         .then((response) => response.json())
         .then((data) => {
-          setData(data);
+          data?.error ? setIsError(true) : setData(data);
+          setIsLoading(false);
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setData, location, city]);
 
-  return { data };
+  return { data, isError, isLoading };
 };

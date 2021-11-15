@@ -2,12 +2,21 @@ import { useState, useEffect } from "react";
 
 export const useCurrentLocation = () => {
   const [location, setLocation] = useState();
-  const error = () => {
-    console.error("Please enable location service");
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  const success = (location) => {
+    setIsLoading(false);
+    setLocation(location);
   };
+
+  const error = () => {
+    setIsError(true);
+  };
+
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(setLocation, error);
+    navigator.geolocation.getCurrentPosition(success, error);
   }, [setLocation]);
 
-  return { location };
+  return { isLoading, isError, location };
 };

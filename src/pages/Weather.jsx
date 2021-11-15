@@ -8,15 +8,15 @@ import { MainContainer, FeatureContainer } from "./style";
 
 const Weather = () => {
   const { location } = useCurrentLocation();
-  const { data } = useWeather({ location });
-  if (!data) {
-    return <div>loading</div>;
-  }
-  return (
+  const { data, isLoading } = useWeather({ location });
+
+  return isLoading ? (
+    <div>Loading</div>
+  ) : (
     <MainContainer>
       <Banner city={data?.location?.name} country={data?.location?.country} />
       <FeatureContainer>
-        <ThreeDaysForecast forecastWeather={data?.forecast.forecastday} />
+        <ThreeDaysForecast forecastWeather={data?.forecast?.forecastday} />
         <AdditionalLocations />
       </FeatureContainer>
       <WeatherTab currentWeather={data?.current} />

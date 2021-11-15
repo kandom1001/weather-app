@@ -8,8 +8,11 @@ const ThreeDaysForecast = ({ forecastWeather }) => {
         <strong>3 Days </strong>Forecast
       </div>
 
-      {forecastWeather.map((forecast) => (
-        <DailyForecast forecastWeather={forecast} />
+      {forecastWeather.map((forecast, index) => (
+        <DailyForecast
+          key={`forecastWeather-${index}`}
+          forecastWeather={forecast}
+        />
       ))}
     </ThreeDayForecastContainer>
   );

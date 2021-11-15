@@ -6,21 +6,27 @@ import { AdditionalLocationsContainer } from "./style";
 const AdditionalLocations = () => {
   const [cityList, setCityList] = useState([]);
 
-  const removeCity = (city) => {
+  const handleRemoveCity = (city) => {
     setCityList(cityList.filter((e) => e !== city));
   };
 
-  const addCity = (city) => {
+  const handleAddCity = (city) => {
     setCityList([...cityList, city]);
   };
 
   return (
     <AdditionalLocationsContainer>
       {cityList &&
-        cityList.map((city) => {
-          return <CityWeather city={city} removeCity={removeCity} />;
+        cityList.map((city, index) => {
+          return (
+            <CityWeather
+              key={`cityWeather-${index}`}
+              city={city}
+              handleRemoveCity={handleRemoveCity}
+            />
+          );
         })}
-      {cityList.length < 4 && <AddLocation addCity={addCity} />}
+      {cityList.length < 4 && <AddLocation handleAddCity={handleAddCity} />}
     </AdditionalLocationsContainer>
   );
 };

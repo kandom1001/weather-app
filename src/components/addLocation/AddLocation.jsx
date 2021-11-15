@@ -5,7 +5,7 @@ import {
   ConfirmButton,
 } from "./style";
 
-const AddLocation = ({ addCity }) => {
+const AddLocation = ({ handleAddCity }) => {
   const [showAddLocationInput, setShowAddLocationInput] = useState(false);
   const [input, setInput] = useState("");
   return (
@@ -23,9 +23,9 @@ const AddLocation = ({ addCity }) => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            addCity(input);
+            input && handleAddCity(input);
             setInput("");
-            setShowAddLocationInput(false);
+            input && setShowAddLocationInput(false);
           }}
         >
           <input
